@@ -9,7 +9,7 @@ var secret = process.env.JWT_SECRET;
 
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/devDb'); //change to db want to use
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/devDb'); //change to db want to use
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
